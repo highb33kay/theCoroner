@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 
 // get the remaining time from the session variable
 $remainingTime = $_SESSION['remainingTime'] ?? 60 * 60; // 30 minutes in seconds

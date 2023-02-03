@@ -1,4 +1,4 @@
-<?php require 'protect.php'; ?>
+<?php require './Modules/inc/protect.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HiiT Exam Portal</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
   </head>
   <body>
     <header>
@@ -23,7 +23,7 @@
             <a class="home" href="#">Home</a>
           </li>
           <li class="">
-            <a class="" href="login.php">
+            <a class="" href="./Modules/auth/login.php">
               <button type="button" class="nav-btn">
                 Get Started
               </button>
@@ -37,7 +37,11 @@
       <div class="hero-text">
         <h1>Exam Portal</h1>
         <p>Take your exam here</p>
-        <button type="button" class="get-started-btn">Get Started</button>
+        <a class="" href="./Modules/auth/login.php">
+              <button type="button" class="nav-btn">
+                Get Started
+              </button>
+            </a>
       </div>
     </div>
   </body>
