@@ -2,6 +2,8 @@
 // (A) LOGIN CHECKS
 require 'check.php';
 // (B) LOGIN PAGE HTML
+
+// check if the user is logging out
 ?>
 <!DOCTYPE html>
 <html>
