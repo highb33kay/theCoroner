@@ -9,7 +9,7 @@ require 'check.php';
 <html>
   <head>
     <title>Login Page Demo</title>
-    <link href=login.css" rel="stylesheet">
+    <link href="../../Assets/css/login.css" rel="stylesheet">
   </head>
   <body>
     <?php if (isset($failed)) { ?>

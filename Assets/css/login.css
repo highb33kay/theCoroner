@@ -20,27 +20,30 @@ body {
   font-size: 1.5em;
   margin: 0 0 20px 0;
 }
-#login-form label, #login-form input {
+#login-form label,
+#login-form input {
   display: block;
   width: 100%;
   margin-top: 10px;
 }
-#login-form label { color: #767676; }
+#login-form label {
+  color: #767676;
+}
 #login-form input {
   padding: 10px;
   border: 1px solid #adadad;
 }
-#login-form input[type=submit] {
+#login-form input[type='submit'] {
   margin-top: 20px;
   border: 0;
   color: #fff;
-  background: #a52323;
+  background: #2066d0;
   cursor: pointer;
 }
 
 /* (C) INVALID LOGIN */
 #login-bad {
-  padding : 10px;
+  padding: 10px;
   margin-bottom: 20px;
   background: #ffe7e7;
   border: 1px solid #ff3e3e;

@@ -17,7 +17,7 @@ if (isset($_SESSION['logoutTime']) && time() - $_SESSION['logoutTime'] < 3600) {
 }
 
 // (D) REDIRECT TO LOGIN PAGE IF NOT SIGNED IN
-if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
-    exit();
-}
+// if (!isset($_SESSION['user'])) {
+//     header('Location: login.php');
+//     exit();
+// }
