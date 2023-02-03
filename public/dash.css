@@ -1,0 +1,54 @@
+/* fixed header */
+header {
+  display: flex;
+  height: 50px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+/* sub header */
+.sub-header {
+  height: 40px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* red countdown timer */
+.countdown-timer {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* time started */
+.time-started {
+  font-size: 14px;
+  padding: 5px;
+}
+
+/* date started */
+.date-started {
+  font-size: 14px;
+  padding: 5px;
+}
+
+.exam-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
