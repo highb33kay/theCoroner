@@ -45,41 +45,64 @@ header {
   padding: 5px;
 }
 
-.exam-section {
+/* .exam-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
+} */
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  min-width: 400px;
 }
+.dated {
+  font-size: 14px;
+  padding: 5px;
+}
+
+iframe {
+  width: 1px;
+  min-width: 100%;
+  height: 100vh;
+}
+.date_date_set {
+  display: flex;
+}
+
+.exam-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+/* make the header responsive on mobile */
 
 @media screen and (max-width: 600px) {
-  /* welcome screen responsiveness */
-  .welcome {
+  header {
     display: flex;
     flex-direction: column;
+    height: 100px;
+    background-color: #333;
+    color: #fff;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    height: auto;
-    width: auto;
+    position: fixed;
+    /* top: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    z-index: 1;
+    margin: 0;
+    text-align: center;
   }
-}
-
-.g-form-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding-top: 100%; /* 1:1 Aspect Ratio */
-}
-
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+  .header h3 {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+  }
+  .sub-header {
+  }
 }

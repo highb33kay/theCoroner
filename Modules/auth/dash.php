@@ -22,7 +22,7 @@ include '../inc/timer.php';
         <div class="countdown-timer">
           <?php echo gmdate('H:i:s', $remainingTime); ?>
         </div>
-        <div>
+        <div class="date_date_set">
           <div class="time-started">
             Time Started: <?php
             $today = date('H:i:s');
@@ -42,10 +42,16 @@ include '../inc/timer.php';
       <!-- <input type="submit" value=""> -->
     </form>
     </header>
+    <!-- <frameset border="0" rows="100%,*" cols="100%" frameborder="no">
+          <frame name="TopFrame" scrolling="yes" noresize src="form.php">
+          <frame name="bottomFrame" scrolling="no" noresize>
+        </frameset> -->
     <div class="exam-section">
+      
       <?php if ($remainingTime > 0): ?>
-    <div class="welcome">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScS9P4m_dCRm6wBeeV1OwN7HHZKVx7tUNN-pCtfIjfwyFADkg/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        
+    <div class="container">
+     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScS9P4m_dCRm6wBeeV1OwN7HHZKVx7tUNN-pCtfIjfwyFADkg/viewform?embedded=true" frameborder="100" scrolling="yes"></iframe>
     </div>
   <?php else: ?>
     <div class="message">
@@ -88,6 +94,12 @@ include '../inc/timer.php';
       window.onload = function() {
         startTimer();
       };
+
+      iFrameResize({
+    log: false,
+    checkOrigin: false
+  });
     </script>
+    <script src="../../Assets/js/iframeResizer.contentWindow.min.js"></script>
   </body>
 </html>

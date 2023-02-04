@@ -1,8 +1,6 @@
 <?php
-// (A) LOGIN CHECKS
+// Path: Modules\auth\login.php // Login checks
 require 'check.php';
-// (B) LOGIN PAGE HTML
-
 // check if the user is logging out
 ?>
 <!DOCTYPE html>
