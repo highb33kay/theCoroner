@@ -1,5 +1,7 @@
 <?php require '../inc/protect.php';
 include '../inc/timer.php';
+// require '../auth/admin.php';
+include 'variables.php';
 ?>
 
 
@@ -51,7 +53,7 @@ include '../inc/timer.php';
       <?php if ($remainingTime > 0): ?>
         
     <div class="container">
-     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScS9P4m_dCRm6wBeeV1OwN7HHZKVx7tUNN-pCtfIjfwyFADkg/viewform?embedded=true" frameborder="100" scrolling="yes"></iframe>
+     <iframe src="<?php echo $url; ?>" frameborder="100" scrolling="yes"></iframe>
     </div>
   <?php else: ?>
     <div class="message">
