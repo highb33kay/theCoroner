@@ -19,18 +19,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // prepare a select statement
         $sql = 'SELECT id FROM Users WHERE username = ?';
 
-        if ($stmt = mysql_prepare($link, $sql)) {
-            mysql_stmt_bind_param($stmt, 's', $param_username);
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            mysqli_stmt_bind_param($stmt, 's', $param_username);
 
             // set parameters
             $param_username = trim($_POST['username']);
 
             // attempt to execute the prepared statement
-            if (mysql_stmt_execute($stmt)) {
+            if (mysqli_stmt_execute($stmt)) {
                 // store result
-                mysql_stmt_store_result($stmt);
+                mysqli_stmt_store_result($stmt);
 
-                if (mysql_stmt_num_rows($stmt) == 1) {
+                if (mysqli_stmt_num_rows($stmt) == 1) {
                     $username_err = 'This username is already taken.';
                 } else {
                     $username = trim($_POST['username']);
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else {
                 echo 'Oops! Something went wrong. Please try again later.';
             }
-            mysql_stmt_close($stmt);
+            mysqli_stmt_close($stmt);
         }
     }
 
@@ -78,8 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // prepare an insert statement
         $sql = 'INSERT INTO users (username, password, role) VALUES (?, ?, ?)';
 
-        if ($stmt = mysql_prepare($link, $sql)) {
-            mysql_stmt_bind_param(
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            mysqli_stmt_bind_param(
                 $stmt,
                 'ss',
                 $param_username,
@@ -93,18 +93,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $param_role = $role;
 
             // attempt to execute the prepared statement
-            if (mysql_stmt_execute($stmt)) {
+            if (mysqli_stmt_execute($stmt)) {
                 // redirect to login page
                 header('location: login.php');
             } else {
                 echo 'Something went wrong. Please try again later.';
             }
-            mysql_stmt_close($stmt);
+            mysqli_stmt_close($stmt);
         }
     }
-
     // close connection
-    mysql_close($link);
+    mysqli_close($link);
 }
 ?>
 
@@ -121,9 +120,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <h2>Sign Up</h2>
         <p>Sign Up Here</p>
-        <form action="<?php echo htmlspecialchars(
-            $_SERVER['PHP_SELF']
-        ); ?>" method="post">
+       <!-- Add the form HTML code -->
+<form action="<?php echo htmlspecialchars(
+    $_SERVER['PHP_SELF']
+); ?>" method="post">
+    <div class="form-group <?php echo !empty($username_err)
+        ? 'has-error'
+        : ''; ?>">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" class="form-control" value="<?php echo $username; ?>">
+    <span class="help-block"><?php echo $username_err; ?></span>
+</div>
+
+<div class="form-group <?php echo !empty($password_err) ? 'has-error' : ''; ?>">
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" class="form-control">
+    <span class="help-block"><?php echo $password_err; ?></span>
+</div>
+
+<div class="form-group <?php echo !empty($confirm_password_err)
+    ? 'has-error'
+    : ''; ?>">
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" name="confirm_password" id="confirm_password" class="form-control">
+    <span class="help-block"><?php echo $confirm_password_err; ?></span>
+</div>
+
+<div class="form-group <?php echo !empty($role_err) ? 'has-error' : ''; ?>">
+    <label for="role">Role:</label>
+    <select name="role" id="role" class="form-control">
+        <option value="">Select Role</option>
+        <option value="admin" <?php echo $role == 'admin'
+            ? 'selected'
+            : ''; ?>>Admin</option>
+        <option value="user" <?php echo $role == 'user'
+            ? 'selected'
+            : ''; ?>>User</option>
+    </select>
+    <span class="help-block"><?php echo $role_err; ?></span>
+</div>
+
+<div class="form-group">
+    <input type="submit" value="Submit" class="btn btn-primary">
+    <input type="reset" value="Reset" class="btn btn-default">
+</div>
+    <p>Already have an account? <a href="login.php">Login here</a>.</p>
+</form>
         
     </form>
     </div>
