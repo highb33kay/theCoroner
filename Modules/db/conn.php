@@ -22,3 +22,4 @@ if (!$retval) {
 
 echo "Database exam_db created successfully\n";
 ?>
+<!-- still plenty of work to do -->
